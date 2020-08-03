@@ -2,10 +2,6 @@
 - name: main.yml
   hosts: database_servers
   become_user: "{{ postgres_user }}"
-  gather_facts: false
+  gather_facts: true
   roles:
-<<<<<<< HEAD
-    postgres
-=======
     - postgres
->>>>>>> 60337c6c5010bc52a529afa95ca1997fc77ae7a8

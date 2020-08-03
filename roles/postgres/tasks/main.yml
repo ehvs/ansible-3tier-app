@@ -1,14 +1,5 @@
 ---
 # tasks file for postgres
-
-- name: Deploy, configure, and populate Postgres 10
-  hosts: database_servers
-  become: true
-  gather_facts: false
-  tags:
-    - database_servers
-  tasks:
-
     - name: Install Postgres packages
       package:
         name: "{{ __package }}"

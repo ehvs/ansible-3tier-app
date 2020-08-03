@@ -4,4 +4,8 @@
   become_user: "{{ postgres_user }}"
   gather_facts: false
   roles:
+<<<<<<< HEAD
     postgres
+=======
+    - postgres
+>>>>>>> 60337c6c5010bc52a529afa95ca1997fc77ae7a8

@@ -12,3 +12,5 @@
   become: true
   roles:
     - tomcat
+  tags:
+    - app_servers

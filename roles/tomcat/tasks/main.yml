@@ -21,3 +21,8 @@
   service:
     name: "{{ app_server_service }}"
     state: started
+- name: Create symlink to resolve tomcat java issue
+  file:
+    src: /usr/share/java/tomcat/extras/tomcat-juli.jar
+    dest: /usr/share/tomcat/bin/tomcat-juli.jar
+    state: link

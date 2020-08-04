@@ -1,7 +1,14 @@
 ---
-- name: main.yml
+- name: Install postgres
   hosts: database_servers
   become: true
   gather_facts: false
   roles:
     - postgres
+
+- name: Deploy app tier
+  hosts: app_servers
+  gather_facts: false
+  become: true
+  roles:
+    - tomcat

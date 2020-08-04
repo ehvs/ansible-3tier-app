@@ -7,16 +7,16 @@
 - name: Enable Tomcat at boot
   service:
     name: tomcat
-    enabled: y
+    enabled: yes
 - name: Create Tomcat content directory
   file:
     path: /usr/share/tomcat/webapps/ROOT
-    state: directo
+    state: directory
 - name: Copy static index.html to tomcat webapps/ansible/index.html
   template:
     src: index.html.j2
     dest: /usr/share/tomcat/webapps/ROOT/index.html
-    mode: 06
+    mode: 0644
 - name: Start Tomcat
   service:
     name: "{{ app_server_service }}"

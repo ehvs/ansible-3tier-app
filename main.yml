@@ -14,3 +14,12 @@
     - tomcat
   tags:
     - app_servers
+
+- name: Deploy HAProxy load balancer
+  hosts: load_balancers
+  gather_facts: false 
+  become: true
+  roles:
+    - haproxy
+  tags:
+    - load_balancers

@@ -10,20 +10,20 @@
   hosts: app_servers
   gather_facts: false
   become: true
-  roles:
-    - tomcat
   tags:
     - app_servers
+  roles:
+    - tomcat
 
 - name: Deploy HAProxy load balancer
   hosts: load_balancers
   gather_facts: false 
   become: true
-  roles:
-    - haproxy
   tags:
     - load_balancers
-    
+  roles:
+    - haproxy
+  
 - name: End to end smoke tests
   hosts: app_servers:database_servers
   gather_facts: true

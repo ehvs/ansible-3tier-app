@@ -2,7 +2,8 @@
 # tasks file for smoke_test
 - debug:
     msg: 
-      - "IP is {{ hostvars['appdbs']['ansible_default_ipv4']['address'] }}"
+      #- "IP is {{ hostvars['appdbs']['ansible_default_ipv4']['address'] }}"
+      - "IP is {{ hostvars['appdbs']['inventory_hostname'] }}"
       - "First App server  {{ groups.apps[0] }}" 
     verbosity: 2        
 - name: Smoketest Postgres database
